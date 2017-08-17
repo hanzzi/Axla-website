@@ -1,0 +1,45 @@
+function populateTable()
+{
+
+}
+
+function searchUsers()
+{
+    var text = '{ "employees" : [' +
+        '{ "firstName":"John" , "lastName":"Doe" },' +
+        '{ "firstName":"Anna" , "lastName":"Smith" },' +
+        '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+    var jsonObject = JSON.parse(text);
+
+    document.getElementById("sub").innerHTML = jsonObject.employees[1].firstName + " " + jsonObject.employees[1].lastName;
+
+
+
+    var test = JSON.parse()
+}
+function ReadJsonFile() {
+    var files = evt.target.files;
+
+    var output = [];
+    for (var i = 0; files[i]; i++)
+    {
+
+    }
+}
+
+function test()
+{
+    var files = evt.target.files; // FileList object
+
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+        output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+            f.size, ' bytes, last modified: ',
+            f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+            '</li>');
+    }
+    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+}
+document.getElementById('files').addEventListener('change', handleFileSelect, false);

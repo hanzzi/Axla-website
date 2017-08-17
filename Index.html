@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employees</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <script type="text/javascript" src="Employees.json"></script>
+      <script src="jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Employees
+      </h1>
+      <p class="subtitle" id="sub">
+        Paragraph Here
+        </p>
+        <div id="dvTable">
+        </div>
+        <button id="searchButton" onclick="populateTable()">Click Me!</button>
+    </div>
+      <script>
+          function populateTable()
+          {
+              var query = $.getJSON("https://jsonplaceholder.typicode.com/users");
+
+              var users =
+                  [
+                      {
+                          "id": 1,
+                          "name": "Leanne Graham",
+                          "username": "Bret",
+                          "email": "Sincere@april.biz",
+                          "address": {
+                              "street": "Kulas Light",
+                              "suite": "Apt. 556",
+                              "city": "Gwenborough",
+                              "zipcode": "92998-3874",
+                              "geo": {
+                                  "lat": "-37.3159",
+                                  "lng": "81.1496"
+                              }
+                          },
+                          "phone": "1-770-736-8031 x56442",
+                          "website": "hildegard.org",
+                          "company": {
+                              "name": "Romaguera-Crona",
+                              "catchPhrase": "Multi-layered client-server neural-net",
+                              "bs": "harness real-time e-markets"
+                          }
+                      },
+                      {
+                          "id": 2,
+                          "name": "Ervin Howell",
+                          "username": "Antonette",
+                          "email": "Shanna@melissa.tv",
+                          "address": {
+                              "street": "Victor Plains",
+                              "suite": "Suite 879",
+                              "city": "Wisokyburgh",
+                              "zipcode": "90566-7771",
+                              "geo": {
+                                  "lat": "-43.9509",
+                                  "lng": "-34.4618"
+                              }
+                          },
+                          "phone": "010-692-6593 x09125",
+                          "website": "anastasia.net",
+                          "company": {
+                              "name": "Deckow-Crist",
+                              "catchPhrase": "Proactive didactic contingency",
+                              "bs": "synergize scalable supply-chains"
+                          }
+                      },
+                      {
+                          "id": 3,
+                          "name": "Clementine Bauch",
+                          "username": "Samantha",
+                          "email": "Nathan@yesenia.net",
+                          "address": {
+                              "street": "Douglas Extension",
+                              "suite": "Suite 847",
+                              "city": "McKenziehaven",
+                              "zipcode": "59590-4157",
+                              "geo": {
+                                  "lat": "-68.6102",
+                                  "lng": "-47.0653"
+                              }
+                          },
+                          "phone": "1-463-123-4447",
+                          "website": "ramiro.info",
+                          "company": {
+                              "name": "Romaguera-Jacobson",
+                              "catchPhrase": "Face to face bifurcated interface",
+                              "bs": "e-enable strategic applications"
+                          }
+                      },
+                      {
+                          "id": 4,
+                          "name": "Patricia Lebsack",
+                          "username": "Karianne",
+                          "email": "Julianne.OConner@kory.org",
+                          "address": {
+                              "street": "Hoeger Mall",
+                              "suite": "Apt. 692",
+                              "city": "South Elvis",
+                              "zipcode": "53919-4257",
+                              "geo": {
+                                  "lat": "29.4572",
+                                  "lng": "-164.2990"
+                              }
+                          },
+                          "phone": "493-170-9623 x156",
+                          "website": "kale.biz",
+                          "company": {
+                              "name": "Robel-Corkery",
+                              "catchPhrase": "Multi-tiered zero tolerance productivity",
+                              "bs": "transition cutting-edge web services"
+                          }
+                      },
+                      {
+                          "id": 5,
+                          "name": "Chelsey Dietrich",
+                          "username": "Kamren",
+                          "email": "Lucio_Hettinger@annie.ca",
+                          "address": {
+                              "street": "Skiles Walks",
+                              "suite": "Suite 351",
+                              "city": "Roscoeview",
+                              "zipcode": "33263",
+                              "geo": {
+                                  "lat": "-31.8129",
+                                  "lng": "62.5342"
+                              }
+                          },
+                          "phone": "(254)954-1289",
+                          "website": "demarco.info",
+                          "company": {
+                              "name": "Keebler LLC",
+                              "catchPhrase": "User-centric fault-tolerant solution",
+                              "bs": "revolutionize end-to-end systems"
+                          }
+                      },
+                      {
+                          "id": 6,
+                          "name": "Mrs. Dennis Schulist",
+                          "username": "Leopoldo_Corkery",
+                          "email": "Karley_Dach@jasper.info",
+                          "address": {
+                              "street": "Norberto Crossing",
+                              "suite": "Apt. 950",
+                              "city": "South Christy",
+                              "zipcode": "23505-1337",
+                              "geo": {
+                                  "lat": "-71.4197",
+                                  "lng": "71.7478"
+                              }
+                          },
+                          "phone": "1-477-935-8478 x6430",
+                          "website": "ola.org",
+                          "company": {
+                              "name": "Considine-Lockman",
+                              "catchPhrase": "Synchronised bottom-line interface",
+                              "bs": "e-enable innovative applications"
+                          }
+                      },
+                      {
+                          "id": 7,
+                          "name": "Kurtis Weissnat",
+                          "username": "Elwyn.Skiles",
+                          "email": "Telly.Hoeger@billy.biz",
+                          "address": {
+                              "street": "Rex Trail",
+                              "suite": "Suite 280",
+                              "city": "Howemouth",
+                              "zipcode": "58804-1099",
+                              "geo": {
+                                  "lat": "24.8918",
+                                  "lng": "21.8984"
+                              }
+                          },
+                          "phone": "210.067.6132",
+                          "website": "elvis.io",
+                          "company": {
+                              "name": "Johns Group",
+                              "catchPhrase": "Configurable multimedia task-force",
+                              "bs": "generate enterprise e-tailers"
+                          }
+                      },
+                      {
+                          "id": 8,
+                          "name": "Nicholas Runolfsdottir V",
+                          "username": "Maxime_Nienow",
+                          "email": "Sherwood@rosamond.me",
+                          "address": {
+                              "street": "Ellsworth Summit",
+                              "suite": "Suite 729",
+                              "city": "Aliyaview",
+                              "zipcode": "45169",
+                              "geo": {
+                                  "lat": "-14.3990",
+                                  "lng": "-120.7677"
+                              }
+                          },
+                          "phone": "586.493.6943 x140",
+                          "website": "jacynthe.com",
+                          "company": {
+                              "name": "Abernathy Group",
+                              "catchPhrase": "Implemented secondary concept",
+                              "bs": "e-enable extensible e-tailers"
+                          }
+                      },
+                      {
+                          "id": 9,
+                          "name": "Glenna Reichert",
+                          "username": "Delphine",
+                          "email": "Chaim_McDermott@dana.io",
+                          "address": {
+                              "street": "Dayna Park",
+                              "suite": "Suite 449",
+                              "city": "Bartholomebury",
+                              "zipcode": "76495-3109",
+                              "geo": {
+                                  "lat": "24.6463",
+                                  "lng": "-168.8889"
+                              }
+                          },
+                          "phone": "(775)976-6794 x41206",
+                          "website": "conrad.com",
+                          "company": {
+                              "name": "Yost and Sons",
+                              "catchPhrase": "Switchable contextually-based project",
+                              "bs": "aggregate real-time technologies"
+                          }
+                      },
+                      {
+                          "id": 10,
+                          "name": "Clementina DuBuque",
+                          "username": "Moriah.Stanton",
+                          "email": "Rey.Padberg@karina.biz",
+                          "address": {
+                              "street": "Kattie Turnpike",
+                              "suite": "Suite 198",
+                              "city": "Lebsackbury",
+                              "zipcode": "31428-2261",
+                              "geo": {
+                                  "lat": "-38.2386",
+                                  "lng": "57.2232"
+                              }
+                          },
+                          "phone": "024-648-3804",
+                          "website": "ambrose.net",
+                          "company": {
+                              "name": "Hoeger LLC",
+                              "catchPhrase": "Centralized empowering task-force",
+                              "bs": "target end-to-end models"
+                          }
+                      }
+                  ];
+
+              //displayTable(users);
+
+
+
+
+
+              var numberOfUsers = users.length;
+
+              var table = document.getElementById("usersTable")
+
+              var user = buildRow(users, 0);
+
+
+
+              var userTable = `
+<table style="width:100%" id="usersTable">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Location</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Company</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>${user[0]}</td>
+                <td>${user[1]}</td>
+                <td>${user[2]}</td>
+                <td>${user[3]}</td>
+                <td>${user[4]}</td>
+                <td>${user[5]}</td>
+                <td>${user[6]}</td>
+                <td>${user[7]}</td>
+                <td>${user[8]}</td>
+            </tr>
+            </tbody>
+        </table>
+`
+
+              var element = document.getElementById("dvTable").innerHTML = userTable;
+
+              for (var i = 0; i < table.rows[0].cells.length; i++)
+              {
+                  var user = buildRow(users, i);
+
+
+              }
+
+
+
+
+/*
+              var table = document.createElement("TABLE");
+              table.border = "1";
+
+              var columnCount = users[0].length;
+
+              var row = table.insertRow(-1);
+              for (var i = 0; i < columnCount; i++)
+              {
+                  var headerCell = document.createElement('TH');
+                  headerCell.innerHTML = users[0][i];
+                  row.appendChild(headerCell);
+              }
+
+              for (var i = 1; i < users.length; i++)
+              {
+                  row = table.insertRow(-1);
+                  for (var j = 0; j < columnCount; j++)
+                  {
+                      var cell = row.insertCell(-1);
+                      cell.innerHTML = users[i][j];
+                  }
+              }
+
+              var dvTable = document.getElementById();
+              dvTable.innerHTML = "";
+              dvTable.appendChild(table);
+*/
+/*
+              for (var i = 0; i < users.length; i++)
+              {
+                  var currentUser = buildRow(users, i);
+
+                  var row = document.createElement('tr');
+
+                  var Columns = [
+                      "Id",
+                      "Name",
+                      "Username",
+                      "Email",
+                      "Address",
+                      "Location",
+                      "Phone",
+                      "Website",
+                      "Company"
+                  ];
+
+                  for (var j = 0; j < Columns.length; j++)
+                  {
+                      var cell = document.createElement('td');
+
+                      cell.innerHTML = currentUser[Columns[j]];
+
+                      row.appendChild(cell);
+                  }
+                  table.appendChild(row);
+
+              }
+
+*/
+/*
+              for (var i = 0; i < numberOfUsers; i++)
+              {
+                  var currentUser = buildRow(users ,i);
+                  var tableColumns = table.rows[0].cells.length;
+
+                  for (var j = 0; j < tableColumns; j++)
+                  {
+                      var cell = document.getElementById("usersTable")[j];
+
+                      cell.innerHTML = currentUser[j];
+
+                      var applyRow = table.appendChild(cell)
+
+                  }
+              }
+*/
+          }
+
+
+
+          function displayTable(users)
+          {   // get the table to add rows to
+              var table = document.getElementById('presidents');
+
+              // cycle through the array for each of the presidents
+              for (var i = 0; i < users.length; ++i)
+              {   // keep a reference to an individual president object
+                  var user = users[i];
+
+                  // create a row element to append cells to
+                  var row = document.createElement('tr');
+
+                  // properties of the array elements
+                  var properties = [
+                      "Id",
+                      "Name",
+                      "Username",
+                      "Email",
+                      "Address",
+                      "Location",
+                      "Phone",
+                      "Website",
+                      "Company"
+                  ];
+                  // append each one of them to the row in question, in order
+                  for (var j = 0; j < properties.length; ++j)
+                  {   // create new data cell for names
+                      var cell = document.createElement('td');
+                      // set name of property using bracket notation (properties[i] is a string,
+                      // which can be used to access properties of president)
+                      cell.innerHTML = user[properties[j]];
+                      console.log(j + " " + i);
+                      // add to end of the row
+                      row.appendChild(cell);
+                  }
+                  // add new row to table
+                  table.appendChild(row);
+              }
+          }
+
+          function buildRow(users, index) {
+              var rowData = [
+                  users[index].id,
+                  users[index].name,
+                  users[index].username,
+                  users[index].email,
+                  // Formatting of the users address to save space.
+                  users[index].address.city + " " + users[index].address.street + " Suite:" + users[index].address.suite + " ZIP: " + users[index].address.zipcode,
+                  "Lat: " + users[index].address.geo.lat + "Lng: " + users[index].address.geo.lng,
+                  users[index].phone,
+                  users[index].website,
+                  users[index].company.name + " " + users[index].company.catchPhrase + " " + users[index].company.bs
+              ];
+
+              return rowData;
+          }
+
+          function badInsertOfdata()
+          {
+
+          }
+
+          function test()
+          {
+              var files = evt.target.files; // FileList object
+
+              // files is a FileList of File objects. List some properties.
+              var output = [];
+              for (var i = 0, f; f = files[i]; i++) {
+                  output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                      f.size, ' bytes, last modified: ',
+                      f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                      '</li>');
+              }
+              document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+          }
+          document.getElementById('files').addEventListener('change', handleFileSelect, false);
+      </script>
+  </section>
+  </body>
+</html>
