@@ -16,16 +16,34 @@
         Employees
       </h1>
       <p class="subtitle" id="sub">
-        Paragraph Here
+        Display all employees
         </p>
         <div id="dvTable">
+            <table style="width:100%" id="usersTable">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Location</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                    <th>Company</th>
+                </tr>
+                </thead>
+                <tbody id="userDataRows">
+
+                </tbody>
+            </table>
         </div>
         <button id="searchButton" onclick="populateTable()">Click Me!</button>
     </div>
       <script>
-          function populateTable()
+          async function populateTable()
           {
-              var query = $.getJSON("https://jsonplaceholder.typicode.com/users");
+              //var query = $.getJSON("https://jsonplaceholder.typicode.com/users");
 
               var users =
                   [
@@ -261,37 +279,15 @@
                       }
                   ];
 
-              //displayTable(users);
-
-
-
-
-
               var numberOfUsers = users.length;
-
               var table = document.getElementById("usersTable")
 
-              var user = buildRow(users, 0);
+              for (var i = 0; i < numberOfUsers; i++)
+              {
+                  var user = await buildRow(users, i);
 
-
-
-              var userTable = `
-<table style="width:100%" id="usersTable">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Location</th>
-                <th>Phone</th>
-                <th>Website</th>
-                <th>Company</th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr>
+                  var miniUserData = `
+                  <tr>
                 <td>${user[0]}</td>
                 <td>${user[1]}</td>
                 <td>${user[2]}</td>
@@ -301,152 +297,21 @@
                 <td>${user[6]}</td>
                 <td>${user[7]}</td>
                 <td>${user[8]}</td>
-            </tr>
-            </tbody>
-        </table>
-`
+              </tr>
+            `
 
-              var element = document.getElementById("dvTable").innerHTML = userTable;
-
-              for (var i = 0; i < table.rows[0].cells.length; i++)
-              {
-                  var user = buildRow(users, i);
-
-
-              }
-
-
-
-
-/*
-              var table = document.createElement("TABLE");
-              table.border = "1";
-
-              var columnCount = users[0].length;
-
-              var row = table.insertRow(-1);
-              for (var i = 0; i < columnCount; i++)
-              {
-                  var headerCell = document.createElement('TH');
-                  headerCell.innerHTML = users[0][i];
-                  row.appendChild(headerCell);
-              }
-
-              for (var i = 1; i < users.length; i++)
-              {
-                  row = table.insertRow(-1);
-                  for (var j = 0; j < columnCount; j++)
-                  {
-                      var cell = row.insertCell(-1);
-                      cell.innerHTML = users[i][j];
-                  }
-              }
-
-              var dvTable = document.getElementById();
-              dvTable.innerHTML = "";
-              dvTable.appendChild(table);
-*/
-/*
-              for (var i = 0; i < users.length; i++)
-              {
-                  var currentUser = buildRow(users, i);
-
-                  var row = document.createElement('tr');
-
-                  var Columns = [
-                      "Id",
-                      "Name",
-                      "Username",
-                      "Email",
-                      "Address",
-                      "Location",
-                      "Phone",
-                      "Website",
-                      "Company"
-                  ];
-
-                  for (var j = 0; j < Columns.length; j++)
-                  {
-                      var cell = document.createElement('td');
-
-                      cell.innerHTML = currentUser[Columns[j]];
-
-                      row.appendChild(cell);
-                  }
-                  table.appendChild(row);
-
-              }
-
-*/
-/*
-              for (var i = 0; i < numberOfUsers; i++)
-              {
-                  var currentUser = buildRow(users ,i);
-                  var tableColumns = table.rows[0].cells.length;
-
-                  for (var j = 0; j < tableColumns; j++)
-                  {
-                      var cell = document.getElementById("usersTable")[j];
-
-                      cell.innerHTML = currentUser[j];
-
-                      var applyRow = table.appendChild(cell)
-
-                  }
-              }
-*/
-          }
-
-
-
-          function displayTable(users)
-          {   // get the table to add rows to
-              var table = document.getElementById('presidents');
-
-              // cycle through the array for each of the presidents
-              for (var i = 0; i < users.length; ++i)
-              {   // keep a reference to an individual president object
-                  var user = users[i];
-
-                  // create a row element to append cells to
-                  var row = document.createElement('tr');
-
-                  // properties of the array elements
-                  var properties = [
-                      "Id",
-                      "Name",
-                      "Username",
-                      "Email",
-                      "Address",
-                      "Location",
-                      "Phone",
-                      "Website",
-                      "Company"
-                  ];
-                  // append each one of them to the row in question, in order
-                  for (var j = 0; j < properties.length; ++j)
-                  {   // create new data cell for names
-                      var cell = document.createElement('td');
-                      // set name of property using bracket notation (properties[i] is a string,
-                      // which can be used to access properties of president)
-                      cell.innerHTML = user[properties[j]];
-                      console.log(j + " " + i);
-                      // add to end of the row
-                      row.appendChild(cell);
-                  }
-                  // add new row to table
-                  table.appendChild(row);
+                  document.getElementById("userDataRows").innerHTML = document.getElementById("userDataRows").innerHTML + miniUserData;
               }
           }
 
-          function buildRow(users, index) {
+          async function buildRow(users, index) {
               var rowData = [
                   users[index].id,
                   users[index].name,
                   users[index].username,
                   users[index].email,
                   // Formatting of the users address to save space.
-                  users[index].address.city + " " + users[index].address.street + " Suite:" + users[index].address.suite + " ZIP: " + users[index].address.zipcode,
+                  users[index].address.city + " " + users[index].address.street + " " + users[index].address.suite + " ZIP: " + users[index].address.zipcode,
                   "Lat: " + users[index].address.geo.lat + "Lng: " + users[index].address.geo.lng,
                   users[index].phone,
                   users[index].website,
@@ -455,27 +320,6 @@
 
               return rowData;
           }
-
-          function badInsertOfdata()
-          {
-
-          }
-
-          function test()
-          {
-              var files = evt.target.files; // FileList object
-
-              // files is a FileList of File objects. List some properties.
-              var output = [];
-              for (var i = 0, f; f = files[i]; i++) {
-                  output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                      f.size, ' bytes, last modified: ',
-                      f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-                      '</li>');
-              }
-              document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-          }
-          document.getElementById('files').addEventListener('change', handleFileSelect, false);
       </script>
   </section>
   </body>
