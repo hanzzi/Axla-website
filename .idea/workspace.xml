@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="80e6eb5b-9b83-4399-bb9b-be9d1095480c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Index.html" afterPath="$PROJECT_DIR$/Index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.css" afterPath="$PROJECT_DIR$/bootstrap.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,12 +18,12 @@
       <file leaf-file-name="Index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="21" column="82" lean-forward="true" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
+            <state relative-caret-position="636">
+              <caret line="317" column="47" lean-forward="false" selection-start-line="317" selection-start-column="47" selection-end-line="317" selection-end-column="47" />
               <folding>
-                <element signature="e#1680#12623#0" expanded="false" />
-                <marker date="1503059685357" expanded="true" signature="13032:13451" ph="..." />
-                <marker date="1503059685357" expanded="true" signature="13032:13486" ph="..." />
+                <element signature="e#1773#12716#0" expanded="false" />
+                <marker date="1503060769318" expanded="true" signature="13242:13661" ph="..." />
+                <marker date="1503060769318" expanded="true" signature="13242:13696" ph="..." />
               </folding>
             </state>
           </provider>
@@ -62,8 +61,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../Axla/bootstrap.css" />
-        <option value="$PROJECT_DIR$/Index.html" />
         <option value="$PROJECT_DIR$/bootstrap.css" />
+        <option value="$PROJECT_DIR$/Index.html" />
       </list>
     </option>
   </component>
@@ -520,12 +519,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1503036440503</updated>
-      <workItem from="1503036441856" duration="17219000" />
+      <workItem from="1503036441856" duration="18039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17219000" />
+    <option name="totallyTimeSpent" value="18039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -594,12 +593,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="82" lean-forward="true" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
+        <state relative-caret-position="636">
+          <caret line="317" column="47" lean-forward="false" selection-start-line="317" selection-start-column="47" selection-end-line="317" selection-end-column="47" />
           <folding>
-            <element signature="e#1680#12623#0" expanded="false" />
-            <marker date="1503059685357" expanded="true" signature="13032:13451" ph="..." />
-            <marker date="1503059685357" expanded="true" signature="13032:13486" ph="..." />
+            <element signature="e#1773#12716#0" expanded="false" />
+            <marker date="1503060769318" expanded="true" signature="13242:13661" ph="..." />
+            <marker date="1503060769318" expanded="true" signature="13242:13696" ph="..." />
           </folding>
         </state>
       </provider>

@@ -48,7 +48,7 @@
           {
               //var query = $.getJSON("https://jsonplaceholder.typicode.com/users");
 
-              //
+              // Horrible way of storing the JSON find another way perhaps through local file or from the URL
               let users =
                   [
                       {
@@ -292,11 +292,13 @@
 
               };
 
+              // Loops through all of the users and puts them in the table
               for (let i = 0; i < numberOfUsers; i++)
               {
                   let user = await buildRow(users, i);
 
-                  let UserData = `
+                  // template for the row
+                  let userData = `
                   <tr>
                 <td>${user[0]}</td>
                 <td>${user[1]}</td>
@@ -313,7 +315,8 @@
               </tr>
             `;
 
-                  document.getElementById("userDataRows").innerHTML = document.getElementById("userDataRows").innerHTML + UserData;
+                  // adds userData to the table
+                  document.getElementById("userDataRows").innerHTML = document.getElementById("userDataRows").innerHTML + userData;
               }
           }
 
