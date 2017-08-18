@@ -20,17 +20,20 @@
         </p>
         <div id="dvTable">
             <table style="width:100%" id="usersTable" class="table table-striped">
-                <thead class="thead-inverse">
+                <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Address</th>
+                    <th>Zip Code</th>
                     <th>Location</th>
                     <th>Phone</th>
                     <th>Website</th>
                     <th>Company</th>
+                    <th>Phrases</th>
+                    <th>BS</th>
                 </tr>
                 </thead>
                 <tbody id="userDataRows">
@@ -45,6 +48,7 @@
           {
               //var query = $.getJSON("https://jsonplaceholder.typicode.com/users");
 
+              //
               let users =
                   [
                       {
@@ -282,6 +286,8 @@
               let numberOfUsers = users.length;
               let table = document.getElementById("usersTable");
 
+
+              // unused as of right now duh...
               let createRow = function() {
 
               };
@@ -290,7 +296,7 @@
               {
                   let user = await buildRow(users, i);
 
-                  let miniUserData = `
+                  let UserData = `
                   <tr>
                 <td>${user[0]}</td>
                 <td>${user[1]}</td>
@@ -301,13 +307,17 @@
                 <td>${user[6]}</td>
                 <td>${user[7]}</td>
                 <td>${user[8]}</td>
+                <td>${user[9]}</td>
+                <td>${user[10]}</td>
+                <td>${user[11]}</td>
               </tr>
             `;
 
-                  document.getElementById("userDataRows").innerHTML = document.getElementById("userDataRows").innerHTML + miniUserData;
+                  document.getElementById("userDataRows").innerHTML = document.getElementById("userDataRows").innerHTML + UserData;
               }
           }
 
+          // returns an array with the relevant data for the next row
           async function buildRow(users, index) {
               let rowData = [
                   users[index].id,
@@ -315,11 +325,14 @@
                   users[index].username,
                   users[index].email,
                   // Formatting of the users address to save space.
-                  users[index].address.city + " " + users[index].address.street + " " + users[index].address.suite + " ZIP: " + users[index].address.zipcode,
+                  users[index].address.city + " " + users[index].address.street + " " + users[index].address.suite,
+                  users[index].address.zipcode,
                   "Lat: " + users[index].address.geo.lat + " Lng: " + users[index].address.geo.lng,
                   users[index].phone,
                   users[index].website,
-                  users[index].company.name + " " + users[index].company.catchPhrase + " " + users[index].company.bs
+                  users[index].company.name,
+                  users[index].company.catchPhrase,
+                  users[index].company.bs
               ];
 
               return new Promise(resolve => {
