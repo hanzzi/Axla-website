@@ -15,16 +15,12 @@
       <file leaf-file-name="Index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="621" column="68" lean-forward="true" selection-start-line="621" selection-start-column="68" selection-end-line="621" selection-end-column="68" />
+            <state relative-caret-position="151">
+              <caret line="53" column="32" lean-forward="true" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
               <folding>
-                <element signature="e#1493#13819#0" expanded="false" />
-                <element signature="e#1735#12678#0" expanded="false" />
-                <element signature="e#13930#14666#0" expanded="false" />
-                <element signature="e#14708#14723#0" expanded="false" />
-                <element signature="e#14950#25893#0" expanded="false" />
-                <marker date="1503157882688" expanded="true" signature="13103:13594" ph="..." />
-                <marker date="1503157882688" expanded="true" signature="26732:27223" ph="..." />
+                <element signature="e#3970#5199#0" expanded="false" />
+                <marker date="1503244245945" expanded="false" signature="2563:3054" ph="..." />
+                <marker date="1503244245945" expanded="true" signature="4483:4974" ph="..." />
               </folding>
             </state>
           </provider>
@@ -34,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/Employees.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+              <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -43,7 +39,7 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="22746">
               <caret line="1338" column="8" lean-forward="false" selection-start-line="1338" selection-start-column="8" selection-end-line="1338" selection-end-column="8" />
               <folding />
             </state>
@@ -63,6 +59,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -85,7 +82,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1616" />
@@ -110,8 +107,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHubDesktop/GitHubDesktop.exe" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -533,12 +530,13 @@
       <option name="presentableId" value="Default" />
       <updated>1503036440503</updated>
       <workItem from="1503036441856" duration="18039000" />
-      <workItem from="1503132187783" duration="18484000" />
+      <workItem from="1503132187783" duration="19682000" />
+      <workItem from="1503225711665" duration="7938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36523000" />
+    <option name="totallyTimeSpent" value="45659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -581,7 +579,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -594,13 +594,37 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1493#13819#0" expanded="false" />
-            <element signature="e#1735#12678#0" expanded="false" />
-            <element signature="e#13930#14666#0" expanded="false" />
-            <element signature="e#14708#14723#0" expanded="false" />
-            <element signature="e#14950#25893#0" expanded="false" />
-            <marker date="1503157882688" expanded="true" signature="13103:13594" ph="..." />
-            <marker date="1503157882688" expanded="true" signature="26732:27223" ph="..." />
+            <element signature="e#3970#5199#0" expanded="false" />
+            <marker date="1503244245945" expanded="false" signature="2563:3054" ph="..." />
+            <marker date="1503244245945" expanded="true" signature="4483:4974" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Employees.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22746">
+          <caret line="1338" column="8" lean-forward="false" selection-start-line="1338" selection-start-column="8" selection-end-line="1338" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3970#5199#0" expanded="false" />
+            <marker date="1503244245945" expanded="false" signature="2563:3054" ph="..." />
+            <marker date="1503244245945" expanded="true" signature="4483:4974" ph="..." />
           </folding>
         </state>
       </provider>
@@ -616,7 +640,7 @@
     <entry file="file://$PROJECT_DIR$/../Axla/bootstrap.css" />
     <entry file="file://$PROJECT_DIR$/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="22746">
           <caret line="1338" column="8" lean-forward="false" selection-start-line="1338" selection-start-column="8" selection-end-line="1338" selection-end-column="8" />
           <folding />
         </state>
@@ -625,23 +649,19 @@
     <entry file="file://$PROJECT_DIR$/Employees.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="621" column="68" lean-forward="true" selection-start-line="621" selection-start-column="68" selection-end-line="621" selection-end-column="68" />
+        <state relative-caret-position="151">
+          <caret line="53" column="32" lean-forward="true" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
           <folding>
-            <element signature="e#1493#13819#0" expanded="false" />
-            <element signature="e#1735#12678#0" expanded="false" />
-            <element signature="e#13930#14666#0" expanded="false" />
-            <element signature="e#14708#14723#0" expanded="false" />
-            <element signature="e#14950#25893#0" expanded="false" />
-            <marker date="1503157882688" expanded="true" signature="13103:13594" ph="..." />
-            <marker date="1503157882688" expanded="true" signature="26732:27223" ph="..." />
+            <element signature="e#3970#5199#0" expanded="false" />
+            <marker date="1503244245945" expanded="false" signature="2563:3054" ph="..." />
+            <marker date="1503244245945" expanded="true" signature="4483:4974" ph="..." />
           </folding>
         </state>
       </provider>
