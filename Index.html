@@ -17,7 +17,7 @@
       <p class="subtitle" id="sub">
         Display all users
         </p>
-        <div id="dvTable" class="container-fluid">
+        <div class="container-fluid">
             <table style="width:100%" id="usersTable" class="table table-striped table-bordered">
                 <thead>
                 <tr>
@@ -40,14 +40,18 @@
 
                 </tbody>
             </table>
+            <button id="searchButton" onclick="PopulateTable()">Refresh</button>
         </div>
-        <button id="searchButton" onclick="PopulateTable()">Click Me!</button>
-        <button onclick="IsDuplicate()">IsDuplicate</button>
+
     </div>
       <script>
-          async function PopulateTable() {
-              let users = await jQuery.getJSON("https://jsonplaceholder.typicode.com/users")
+          let isFirstLoad = true;
 
+          // fills the table with the userdata
+          async function PopulateTable() {
+              let users = await jQuery.getJSON("https://jsonplaceholder.typicode.com/users");
+
+              // specifies the structure the data is populated
               let userRows = users.map((user) => {
                   return [
                       user.id,
@@ -68,9 +72,13 @@
               for (let i = 0; i < userRows.length; i++) {
                   let user = userRows[i];
 
-                  let test = await IsDuplicate(user);
-                  console.log("new");
+                  // if it is the first time the data loads this will not fire because there can be no duplicates when there is no data
+                  if (!isFirstLoad) {
+                      let isDataDuplicate = await IsDuplicate(user);
+                      console.log(isDataDuplicate);
+                  }
 
+                  // template for the structure of the data in the HTML
                   let userTemplate = `
                   <tr>
                 <td>${user[0]}</td>
@@ -89,20 +97,33 @@
               </tr>
             `;
                   // Inserts the data into the table
+                  // beforeEnd inserts the data in the just inside the element just after its last child, documentation of this is found here https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
                   let parent = document.getElementById("userDataRows");
                   parent.insertAdjacentHTML('beforeEnd', userTemplate);
               }
+              isFirstLoad = false;
           }
+          // checks if there are duplicate IDs and returns a boolean accordingly
           function IsDuplicate(user) {
               let table = document.getElementById("usersTable");
 
-              for (let i = 0; i <= table.rows.length; i++) {
-                  console.log("new")
-                  console.log(table.rows[i]);
-                  //console.log(table.rows[i].innerHTML)
-                  console.log(table.rows[0])
-                  console.log(table.rows);
+              // if the IDs are the same return true, if one of the ids are undefined return false, if the IDs do not match return false
+              for (let i = 1; i <= table.rows.length; i++) {
+                  console.log(user[0]);
+                  console.log(table.rows[i].cells[0].innerHTML)
+                  if (typeof table.rows[i].cells[0].innerHTML != 'undefined' || typeof user[0] != "undefined") {
+                      if (table.rows[i].cells[0] == user[0]) {
+                          console.log(true);
+                          return new Promise(resolve => {
+                              resolve(true);
+                          });
+                      }
+                  }
+                  return new Promise(resolve => {
+                      resolve(false);
+                  });
               }
+              console.log(false)
               return new Promise(resolve => {
                   resolve(false);
               });
